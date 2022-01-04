@@ -16,7 +16,7 @@ conda activate transcriber_env
 ###  Download GitHub repo
 
 ```
-git clone 
+git clone https://github.com/rmerzouki/speech-to-text.git
 ```
 
 ###  Pip install libraries
