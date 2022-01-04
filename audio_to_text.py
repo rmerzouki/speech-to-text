@@ -6,7 +6,8 @@ import time
 import requests
 from zipfile import ZipFile
 
-st.markdown('# 📝 **Transcriber App**')
+#st.markdown('# 📝 **Transcriber App**')
+st.markdown('# ✑ **Transcriber : Audio to Text App**')
 bar = st.progress(0)
 
 # Custom functions 
@@ -77,13 +78,14 @@ def transcribe_yt():
     transcript_output_response = requests.get(endpoint, headers=headers)
     #st.info('6. Retrieve transcription results')
     bar.progress(60)
-
+    st.warning('Transcription is processing ...')
+    
     # Check if transcription is complete
-    from time import sleep
+    # from time import sleep
 
     while transcript_output_response.json()['status'] != 'completed':
-        sleep(5)
-        st.warning('Transcription is processing ...')
+        # sleep(120)
+        # st.warning('Transcription is processing ...')
         transcript_output_response = requests.get(endpoint, headers=headers)
     
     bar.progress(100)
@@ -109,12 +111,18 @@ def transcribe_yt():
     zip_file.write('yt.txt')
     zip_file.write('yt.srt')
     zip_file.close()
+    
+    # Remove mp4 file
+    os.remove(filename)
+    
 #####
 
 # The App
 
-# 1. Read API from text file
+# 1. Read API_text from .env
+#from dotenv import load_dotenv
 api_key = st.secrets['api_key']
+#api_key=os.getenv('api_key')
 
 #st.info('1. API is read ...')
 st.warning('Awaiting URL input in the sidebar.')
@@ -125,8 +133,8 @@ st.sidebar.header('Input parameter')
 
 
 with st.sidebar.form(key='my_form'):
-	URL = st.text_input('Enter URL of YouTube video:')
-	submit_button = st.form_submit_button(label='Go')
+    URL = st.text_input('Enter URL of YouTube video:') #https://youtu.be/IUTGFQpKaPU (this is an example)
+    submit_button = st.form_submit_button(label='Go')
 
 # Run custom functions if URL is entered 
 if submit_button:
