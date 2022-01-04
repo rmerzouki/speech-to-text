@@ -6,7 +6,6 @@ import time
 import requests
 from zipfile import ZipFile
 
-#st.markdown('# 📝 **Transcriber App**')
 st.markdown('# ✑ **Transcriber : Audio to Text App**')
 bar = st.progress(0)
 
