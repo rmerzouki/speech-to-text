@@ -75,7 +75,8 @@ instance/
 docs/_build/
 
 # Streamlit
-.Streamlit
+.streamlit
+secrets.toml
 
 # PyBuilder
 target/
