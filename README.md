@@ -37,12 +37,12 @@ The app is deployed on Streamlit. It is accessible through the following path :
     
     https://share.streamlit.io/rmerzouki/speech-to-text/main/audio_to_text.py
 
- 3 steps to deploy the app on Streamlit :
+ Steps to deploy the app on Streamlit :
 
     1 - Run your app locally and click on "Deploy this app".
-    2 - Apps are deployed directly from their Github repo. Enter the location of your app and the setting i.e. secrets, api key...
-    3 - Hit **Deploy!**
-    4 - Once it is done, share your the app path with the audience.
+    2 - Apps are deployed directly from their Github repo. Enter the location of your app and the settings i.e. secrets, api key...
+    3 - Save & Hit Deploy!
+    4 - Once it is done, share your app path with the audience.
 
 Streamlit Secrets Management allows you to store secrets securely and access them in your Streamlit app as environment variables. For further information on this topic, check out the following documentation :
 
