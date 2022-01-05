@@ -133,7 +133,7 @@ st.sidebar.header('Input parameter')
 
 with st.sidebar.form(key='my_form'):
     URL = st.text_input('Enter URL of YouTube video:') #https://youtu.be/IUTGFQpKaPU (this is an example)
-    submit_button = st.form_submit_button(label='Go')
+    submit_button = st.form_submit_button(label='Transcribe')
 
 # Run custom functions if URL is entered 
 if submit_button:
