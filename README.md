@@ -39,7 +39,7 @@ The app is deployed on Streamlit. It is accessible through the following path :
 
  Steps to deploy the app on Streamlit :
 
-    1 - Run your app locally and click on "Deploy this app".
+    1 - Run your app locally, click on the Streamlit menu at the top right of the page and select "Deploy this app".
     2 - Apps are deployed directly from their Github repo. Enter the location of your app and the settings i.e. secrets, api key...
     3 - Save & Hit Deploy!
     4 - Once it is done, share your app path with the audience.
