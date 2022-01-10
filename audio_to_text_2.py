@@ -20,8 +20,21 @@ def get_yt(URL):
     #st.info('2. Audio file has been retrieved from YouTube video')
     bar.progress(10)
 
-# 3. Upload YouTube audio file to AssemblyAI
-def transcribe_yt():
+# 2b. Uploading your audio file (second possibility)
+def upload_file(uploaded_file):
+    os.getcwd()
+    with open(os.path.join(os.getcwd(),uploaded_file.name),"wb") as f:
+        f.write(uploaded_file.getbuffer())
+
+        file_details = {"FileName":uploaded_file .name,"FileType":uploaded_file .type}
+        st.write(file_details)
+
+    #st.info('2. Audio file has been uploaded')
+    bar.progress(10)
+
+# 3. Upload audio file to AssemblyAI
+
+def transcribe_audio_file():
 
     current_dir = os.getcwd()
 
@@ -112,20 +125,17 @@ def transcribe_yt():
     zip_file.close()
     
     # Remove mp4 file
-    #os.remove(filename)
+    os.remove(filename)
     
 #####
 
 # The App
 
 # 1. Read API_text from .env
-#from dotenv import load_dotenv
 api_key = st.secrets['api_key']
-#api_key=os.getenv('api_key')
 
 #st.info('1. API is read ...')
 st.warning('Awaiting URL input in the sidebar.')
-
 
 # Sidebar
 st.sidebar.header('Input parameter')
@@ -133,12 +143,17 @@ st.sidebar.header('Input parameter')
 
 with st.sidebar.form(key='my_form'):
     URL = st.text_input('Enter URL of YouTube video:') #https://youtu.be/IUTGFQpKaPU (this is an example)
+    uploaded_file = st.file_uploader("Upload your audio mp4 file:", type=["mp4"])
     submit_button = st.form_submit_button(label='Transcribe')
 
-# Run custom functions if URL is entered 
+# Run custom functions if file uploaded or URL is entered 
 if submit_button:
-    get_yt(URL)
-    transcribe_yt()
+    if uploaded_file is not None:
+        upload_file(uploaded_file)
+        transcribe_audio_file()
+    else:
+        get_yt(URL)
+        transcribe_audio_file()
 
     with open("transcription.zip", "rb") as zip_download:
         btn = st.download_button(
