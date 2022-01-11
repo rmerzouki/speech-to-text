@@ -27,7 +27,7 @@ pip install -r requirements.txt
 ###  Launch the app
 
 ```
-streamlit run audio_to_text.py
+streamlit run audio_to_text_2.py
 ```
 
 
@@ -35,7 +35,7 @@ streamlit run audio_to_text.py
 ```
 The app is deployed on Streamlit. It is accessible through the following path :
     
-    https://share.streamlit.io/rmerzouki/speech-to-text/main/audio_to_text.py
+    https://share.streamlit.io/rmerzouki/speech-to-text/main/audio_to_text_2.py
 
  Steps to deploy the app on Streamlit :
 
