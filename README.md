@@ -42,7 +42,7 @@ The app is deployed on Streamlit. It is accessible through the following path :
     1 - Run your app locally, click on the Streamlit menu at the top right of the page and select "Deploy this app".
     2 - Apps are deployed directly from their Github repo. Enter the location of your app and the settings i.e. secrets, api key...
     3 - Save & Hit Deploy!
-    4 - Once it is done, share your app path with the audience.
+    4 - Once the application is deployed, share your web application path with the audience.
 
 Streamlit Secrets Management allows you to store secrets securely and access them in your Streamlit app as environment variables. For further information on this topic, check out the following documentation :
 
