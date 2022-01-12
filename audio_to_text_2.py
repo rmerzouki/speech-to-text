@@ -12,22 +12,23 @@ bar = st.progress(0)
 # Custom functions 
 
 # 2. Retrieving audio file from YouTube video
-def get_yt(URL):
+def get_yt(URL): 
     video = YouTube(URL)
     yt = video.streams.get_audio_only()
-    yt.download()
+    yt_file=yt.download()
+    #st.write(str(yt_file))
+
 
     #st.info('2. Audio file has been retrieved from YouTube video')
     bar.progress(10)
 
-# 2b. Uploading your audio file (second possibility)
+# 2b. Uploading your audio file (second option)
 def upload_file(uploaded_file):
     os.getcwd()
     with open(os.path.join(os.getcwd(),uploaded_file.name),"wb") as f:
         f.write(uploaded_file.getbuffer())
-
-        file_details = {"FileName":uploaded_file .name,"FileType":uploaded_file .type}
-        st.write(file_details)
+        #file_details = {"FileName":uploaded_file .name,"FileType":uploaded_file .type}
+        #st.write(str(f))
 
     #st.info('2. Audio file has been uploaded')
     bar.progress(10)
@@ -101,6 +102,8 @@ def transcribe_audio_file():
         transcript_output_response = requests.get(endpoint, headers=headers)
     
     bar.progress(100)
+    st.warning('Transcription is processed.')
+    st.balloons()
 
     # 7. Print transcribed text
     st.header('Output')
@@ -135,7 +138,8 @@ def transcribe_audio_file():
 api_key = st.secrets['api_key']
 
 #st.info('1. API is read ...')
-st.warning('Awaiting URL input in the sidebar.')
+
+#st.warning('Awaiting URL input or uploaded audio file in the sidebar for transcription.')
 
 # Sidebar
 st.sidebar.header('Input parameter')
@@ -146,14 +150,28 @@ with st.sidebar.form(key='my_form'):
     uploaded_file = st.file_uploader("Upload your audio mp4 file:", type=["mp4"])
     submit_button = st.form_submit_button(label='Transcribe')
 
+if (uploaded_file is None) and (str(URL)==''):
+    st.warning('Awaiting URL input or uploaded audio file in the sidebar for transcription.')
+    
+
 # Run custom functions if file uploaded or URL is entered 
 if submit_button:
-    if uploaded_file is not None:
+
+    if (str(URL)!='') and (uploaded_file is not None):
+            st.sidebar.warning('Only one option is possible!')
+            raise Exception("You must provide a URL or an audio file, not both!")
+
+    elif uploaded_file is not None:
         upload_file(uploaded_file)
         transcribe_audio_file()
-    else:
+
+    elif str(URL)!='':
         get_yt(URL)
         transcribe_audio_file()
+
+    else:
+        st.sidebar.warning('Please provide URL input or uploaded audio file! ')
+        raise Exception("You must provide a URL or an audio file!")
 
     with open("transcription.zip", "rb") as zip_download:
         btn = st.download_button(
