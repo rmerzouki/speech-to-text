@@ -26,9 +26,7 @@ pip install -r requirements.txt
 
 ###  Launch the app
 
-```
-streamlit run audio_to_text_2.py
-
+```streamlit run audio_to_text_2.py
 ```
 
 
