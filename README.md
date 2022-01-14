@@ -1,6 +1,10 @@
 # Transcriber : Audio_To_Text-app
 
-# Running transcriber as a Streamlit app
+# 1. Create an AssemblyAI free account
+
+[Create your free AssemblyAI Account & obtain your API Key](https://www.assemblyai.com).
+
+# 2. Running transcriber as a Streamlit app
 To recreate this web app on your own computer, do the following.
 
 ### Create conda environment (Optional)
@@ -31,7 +35,7 @@ streamlit run audio_to_text_2.py
 ```
 
 
-###  Deployment on Streamlit Cloud
+# 3. Deployment on Streamlit Cloud
 ```
  Steps to deploy the app on Streamlit :
 
@@ -49,4 +53,9 @@ Streamlit Secrets Management allows you to store secrets securely and access the
     
 https://share.streamlit.io/rmerzouki/speech-to-text/main/audio_to_text_2.py
 
+```
+
+###  References
+```
+* [1]  Chanin Nantasenamat https://youtu.be/NNq_XBVk30w
 ```
