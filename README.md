@@ -5,6 +5,7 @@
 [Create your free AssemblyAI Account & obtain your API Key](https://www.assemblyai.com).
 
 # 2. Running transcriber as a Streamlit app
+
 To recreate this web app on your own computer, do the following.
 
 ### Create conda environment (Optional)
