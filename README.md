@@ -1,21 +1,21 @@
-# Transcriber : Audio_To_Text-app
+# Transcription Application
 
 # 1. Create an AssemblyAI free account
 
 [Create your free AssemblyAI Account & obtain your API Key](https://www.assemblyai.com).
 
-# 2. Running transcriber as a Streamlit app
+# 2. Running the transcription application as a Streamlit app
 
 To recreate this web app on your own computer, do the following.
 
 ### Create conda environment (Optional)
 Firstly, we will create a conda environment called *transcriber_env*
 ```
-conda create -n transcriber_env python=3.7.9
+conda create -n transcription_env python=3.7.9
 ```
-Secondly, we will login to the *transcriber_env* environment
+Secondly, we will login to the *transcription_env* environment
 ```
-conda activate transcriber_env
+conda activate transcription_env
 ```
 
 ###  Download GitHub repo
