@@ -37,11 +37,10 @@ streamlit run audio_to_text_2.py
 
 
 # 3. Deployment on Streamlit Cloud
-```
 
 [How to deploy on Streamlit Cloud your Speech-to-Text App in Python using AssemblyAI](https://youtu.be/1mDWr97kuJk)
 <a href="https://youtu.be/1mDWr97kuJk"><img src="http://img.youtube.com/vi/1mDWr97kuJk/0.jpg" alt="How to deploy on Streamlit Cloud your Speech-to-Text App in Python using AssemblyAI" title="How to deploy on Streamlit Cloud your Speech-to-Text App in Python using AssemblyAI" width="500" /></a>
-
+```
  Steps to deploy the app on Streamlit :
 
     1 - Run your app locally, click on the Streamlit menu at the top right of the page and select "Deploy this app".
