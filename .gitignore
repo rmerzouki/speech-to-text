@@ -139,4 +139,4 @@ dmypy.json
 transcription.zip
 yt.srt
 yt.txt
-.mp4
+*.mp4
