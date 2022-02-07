@@ -94,10 +94,10 @@ def transcribe_audio_file():
     st.warning('Transcription is processing ...')
     
     # Check if transcription is complete
-    # from time import sleep
+    from time import sleep
 
     while transcript_output_response.json()['status'] != 'completed':
-        # sleep(120)
+        sleep(5)
         # st.warning('Transcription is processing ...')
         transcript_output_response = requests.get(endpoint, headers=headers)
     
@@ -156,10 +156,10 @@ if (uploaded_file is None) and (str(URL)==''):
 
 # Run custom functions if file uploaded or URL is entered 
 if submit_button:
-
+        
     if (str(URL)!='') and (uploaded_file is not None):
-            st.sidebar.warning('Only one option is possible!')
-            raise Exception("You must provide a URL or an audio file, not both!")
+        st.sidebar.warning('Only one option is possible!')
+        raise Exception("You must provide a URL or an audio file, not both!")
 
     elif uploaded_file is not None:
         upload_file(uploaded_file)
@@ -172,7 +172,7 @@ if submit_button:
     else:
         st.sidebar.warning('Please provide URL input or uploaded audio file! ')
         raise Exception("You must provide a URL or an audio file!")
-
+        
     with open("transcription.zip", "rb") as zip_download:
         btn = st.download_button(
             label="Download ZIP",
