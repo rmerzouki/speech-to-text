@@ -64,3 +64,9 @@ https://share.streamlit.io/rmerzouki/speech-to-text/main/audio_to_text_2.py
 ```
 * [1]  Chanin Nantasenamat https://youtu.be/NNq_XBVk30w
 ```
+
+###  Additional notes
+```
+A bug in pytube led me to temporarily use git+https://github.com/rmerzouki/pytube ; this bug is now fixed with pytube version 12.0.0.
+
+```
