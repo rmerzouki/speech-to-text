@@ -69,4 +69,6 @@ https://share.streamlit.io/rmerzouki/speech-to-text/main/audio_to_text_2.py
 ```
 A bug in pytube led me to temporarily use git+https://github.com/rmerzouki/pytube ; this bug is now fixed with pytube version 12.0.0.
 
+A new bug in pytube led me to use git+https://github.com/jmsmg/pytube as of April 26th 2022.
+
 ```
